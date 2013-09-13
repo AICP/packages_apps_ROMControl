@@ -1413,4 +1413,8 @@
     <string name="statusbar_swipe_timeout_title">Statusbar timeout</string>
     <string name="statusbar_swipe_timeout_summary">Timeout for showing the statusbar</string>
 
+    <!-- Fast Charge -->
+    <string name="fast_charge_not_supported_title">Fast Charge not supported</string>
+    <string name="fast_charge_not_supported">Fast Charge is not supported by the current kernel.</string>
+
 </resources>
