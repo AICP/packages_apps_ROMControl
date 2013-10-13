@@ -6,7 +6,6 @@
         android:key="transparency_dialog"
         android:title="@string/transparency_dialog_title" />
 
-
     <PreferenceCategory
         android:key="bootani"
         android:title="@string/bootani_cat">
