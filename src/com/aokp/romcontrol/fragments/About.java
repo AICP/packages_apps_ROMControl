@@ -26,8 +26,8 @@ public class About extends AOKPPreferenceFragment {
         super.onCreate(savedInstanceState);
         setTitle(R.string.title_about);
         addPreferencesFromResource(R.xml.prefs_about);
-        mSiteUrl = findPreference("aokp_website");
-        mReviewUrl = findPreference("aokp_review");
+        mSiteUrl = findPreference("aicp_website");
+        mReviewUrl = findPreference("aicp_review");
         mIrcUrl = findPreference("aokp_irc");
         mDynamicChangelog = findPreference("aokp_dynamic_changelog");
 
@@ -50,7 +50,7 @@ public class About extends AOKPPreferenceFragment {
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
                                          Preference preference) {
         if (preference == mSiteUrl) {
-            launchUrl("http://aokp.co/");
+            launchUrl("http://http://tunsd.de/downloads/ICJ/AICP//");
         } else if (preference == mReviewUrl) {
             Intent mGerrit = new Intent(getActivity().getApplicationContext(),
                     com.jbirdvegas.mgerrit.GerritControllerActivity.class);
