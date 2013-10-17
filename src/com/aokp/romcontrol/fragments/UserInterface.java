@@ -1,6 +1,7 @@
 package com.aokp.romcontrol.fragments;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
@@ -108,6 +109,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     private static final CharSequence PREF_POWER_CRT_MODE = "system_power_crt_mode";
     private static final CharSequence PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
     private static final CharSequence PREF_STATUSBAR_HIDDEN = "statusbar_hidden";
+    private static final CharSequence PREF_DARK_UI = "ui_inverted_mode";
     private static final String KEY_STATUS_BAR_TRAFFIC = "status_bar_traffic";
     private static final String PREF_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
 
@@ -146,6 +148,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     ListPreference mCrtMode;
     CheckBoxPreference mCrtOff;
     CheckBoxPreference mStatusBarHide;
+    CheckBoxPreference mDarkUI;
     ListPreference mListViewAnimation;
     ListPreference mListViewInterpolator;
     CheckBoxPreference mStatusBarTraffic;
@@ -287,6 +290,11 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                 (CheckBoxPreference) findPreference(PREF_WAKEUP_WHEN_PLUGGED_UNPLUGGED);
         mWakeUpWhenPluggedOrUnplugged.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED, true));
+
+        boolean darkUIenabled = Settings.Secure.getInt(mContentResolver,
+                Settings.Secure.UI_INVERTED_MODE, 1) == 2;
+        mDarkUI = (CheckBoxPreference) findPreference(PREF_DARK_UI);
+        mDarkUI.setChecked(darkUIenabled);
 
         mStatusBarTraffic = (CheckBoxPreference) findPreference(KEY_STATUS_BAR_TRAFFIC);
         mStatusBarTraffic.setChecked(Settings.System.getBoolean(mContentResolver,
@@ -606,6 +614,39 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             boolean checked = ((CheckBoxPreference) preference).isChecked();
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_HIDDEN, checked ? true : false);
+            return true;
+        } else if (preference == mDarkUI) {
+            boolean checked = ((CheckBoxPreference) preference).isChecked();
+            Settings.Secure.putInt(mContentResolver,
+                Settings.Secure.UI_INVERTED_MODE, checked ? 2 : 1);
+            Helpers.restartSystemUI();
+            // list off apps which we restart just to be sure due that AOSP
+            // does not every time reload all resources on onConfigurationChanged
+            // or because some apps are just not programmed well on that part.
+            String mTRDSApps[] = new String[] {
+                "com.android.contacts",
+                "com.android.calendar",
+                "com.android.email",
+                "com.android.vending",
+                "com.android.mms",
+                "com.google.android.talk",
+                "com.google.android.gm",
+                "com.google.android.googlequicksearchbox",
+                "com.google.android.youtube",
+                "com.google.android.apps.genie.geniewidget",
+                "com.google.android.apps.plus",
+                "com.google.android.apps.maps"
+            };
+            ActivityManager am = (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);
+            List<ActivityManager.RunningAppProcessInfo> pids = am.getRunningAppProcesses();
+            for(int i = 0; i < pids.size(); i++) {
+                ActivityManager.RunningAppProcessInfo info = pids.get(i);
+                for (int j = 0; j < mTRDSApps.length; j++) {
+                    if(info.processName.equalsIgnoreCase(mTRDSApps[j])) {
+                        am.killBackgroundProcesses(mTRDSApps[j]);
+                    }
+                }
+            }
             return true;
         } else if (preference == mStatusBarTraffic) {
             Settings.System.putBoolean(mContentResolver,
