@@ -168,11 +168,6 @@
         android:key="misc"
         android:title="@string/misc_short">
 
-        <CheckBoxPreference
-            android:key="longpress_to_kill"
-            android:title="@string/longpress_to_kill"
-            android:summary="@string/longpress_to_kill_summary" />
-
         <ListPreference
             android:key="listview_animation"
             android:dialogTitle="@string/listview_animation_title"
