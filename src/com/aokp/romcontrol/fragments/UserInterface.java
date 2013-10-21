@@ -111,6 +111,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     private static final CharSequence PREF_DARK_UI = "ui_inverted_mode";
     private static final String KEY_STATUS_BAR_TRAFFIC = "status_bar_traffic";
     private static final String PREF_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
+    private static final String STATUS_BAR_AUTO_HIDE = "status_bar_auto_hide";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     //private static final int REQUEST_PICK_CUSTOM_ICON = 202; //unused
@@ -150,6 +151,7 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     ListPreference mListViewAnimation;
     ListPreference mListViewInterpolator;
     CheckBoxPreference mStatusBarTraffic;
+    CheckBoxPreference mStatusBarAutoHide;
     
     private AnimationDrawable mAnimationPart1;
     private AnimationDrawable mAnimationPart2;
@@ -248,6 +250,10 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         mStatusBarHide = (CheckBoxPreference) findPreference(PREF_STATUSBAR_HIDDEN);
         mStatusBarHide.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.STATUSBAR_HIDDEN, false));
+
+        mStatusBarAutoHide = (CheckBoxPreference) findPreference(STATUS_BAR_AUTO_HIDE);
+        mStatusBarAutoHide.setChecked(Settings.System.getInt(mContentResolver,
+                Settings.System.AUTO_HIDE_STATUSBAR, 0) == 1);
 
         mUserModeUI = (ListPreference) findPreference(PREF_USER_MODE_UI);
         int uiMode = Settings.System.getInt(mContentResolver,
@@ -600,6 +606,11 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             boolean checked = ((CheckBoxPreference) preference).isChecked();
             Settings.System.putBoolean(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_HIDDEN, checked ? true : false);
+            return true;
+        } else if (preference == mStatusBarAutoHide) {
+            Settings.System.putInt(mContentRes,
+                    Settings.System.AUTO_HIDE_STATUSBAR,
+                    ((CheckBoxPreference)preference).isChecked() ? 1 : 0);
             return true;
         } else if (preference == mDarkUI) {
             boolean checked = ((CheckBoxPreference) preference).isChecked();

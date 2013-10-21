@@ -1391,4 +1391,9 @@
     <string name="hardware_keys_action_last_app">Switch to last app</string>
     <string name="hardware_keys_action_power">Power button</string>
     <string name="hardware_keys_action_torch">Torch</string>
+
+    <!-- Auto-Hide Status Bar -->
+    <string name="auto_hide_statusbar">Auto Hide statusbar</string>
+    <string name="auto_hide_statusbar_summary">Statusbar hides itself when there are no notifications</string>
+
 </resources>
