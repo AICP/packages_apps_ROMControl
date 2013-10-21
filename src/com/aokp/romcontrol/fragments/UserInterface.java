@@ -112,6 +112,8 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     private static final String KEY_STATUS_BAR_TRAFFIC = "status_bar_traffic";
     private static final String PREF_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
     private static final String STATUS_BAR_AUTO_HIDE = "status_bar_auto_hide";
+    private static final String STATUS_BAR_QUICK_PEEK = "status_bar_quick_peek";
+    private static final CharSequence PREF_STATUSBAR_SWIPE_TIMEOUT = "statusbar_swipe_timeout";
 
     private static final int REQUEST_PICK_WALLPAPER = 201;
     //private static final int REQUEST_PICK_CUSTOM_ICON = 202; //unused
@@ -152,6 +154,8 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     ListPreference mListViewInterpolator;
     CheckBoxPreference mStatusBarTraffic;
     CheckBoxPreference mStatusBarAutoHide;
+    CheckBoxPreference mStatusBarQuickPeek;
+    ListPreference mStatusBarSwipeTimeout;
     
     private AnimationDrawable mAnimationPart1;
     private AnimationDrawable mAnimationPart2;
@@ -254,6 +258,17 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         mStatusBarAutoHide = (CheckBoxPreference) findPreference(STATUS_BAR_AUTO_HIDE);
         mStatusBarAutoHide.setChecked(Settings.System.getInt(mContentResolver,
                 Settings.System.AUTO_HIDE_STATUSBAR, 0) == 1);
+
+        mStatusBarQuickPeek = (CheckBoxPreference) findPreference(STATUS_BAR_QUICK_PEEK);
+        mStatusBarQuickPeek.setChecked(Settings.System.getInt(mContentResolver,
+                Settings.System.STATUSBAR_PEEK, 0) == 1);
+
+        mStatusBarSwipeTimeout = (ListPreference) findPreference(PREF_STATUSBAR_SWIPE_TIMEOUT);
+        int statusbarswipetimeout = Settings.System.getInt(getActivity().getContentResolver(),
+            Settings.System.STATUSBAR_PEEK_TIMEOUT, 5000);
+        mStatusBarSwipeTimeout.setValue(String.valueOf(statusbarswipetimeout));
+        mStatusBarSwipeTimeout.setSummary(mStatusBarSwipeTimeout.getEntry());
+        mStatusBarSwipeTimeout.setOnPreferenceChangeListener(this);
 
         mUserModeUI = (ListPreference) findPreference(PREF_USER_MODE_UI);
         int uiMode = Settings.System.getInt(mContentResolver,
@@ -610,6 +625,11 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         } else if (preference == mStatusBarAutoHide) {
             Settings.System.putInt(mContentRes,
                     Settings.System.AUTO_HIDE_STATUSBAR,
+                    ((CheckBoxPreference)preference).isChecked() ? 1 : 0);
+            return true;
+        } else if (preference == mStatusBarQuickPeek) {
+            Settings.System.putInt(mContentRes,
+                    Settings.System.STATUSBAR_PEEK,
                     ((CheckBoxPreference)preference).isChecked() ? 1 : 0);
             return true;
         } else if (preference == mDarkUI) {
@@ -1164,6 +1184,14 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.POWER_UI_LOW_BATTERY_WARNING_POLICY, lowBatteryWarning);
             mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntries()[index]);
+            return true;
+        } else if (preference == mStatusBarSwipeTimeout) {
+            int statusbarswipetimeout = Integer.valueOf((String) newValue);
+            int index = mStatusBarSwipeTimeout.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_PEEK_TIMEOUT,
+                    statusbarswipetimeout);
+            mStatusBarSwipeTimeout.setSummary(mStatusBarSwipeTimeout.getEntries()[index]);
             return true;
         }
         return false;
