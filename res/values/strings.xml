@@ -239,8 +239,6 @@
         label.
     </string>
     <string name="custom_carrier_label_notset">Custom label currently not set</string>
-    <string name="notification_show_wifi_ssid_title">Show WiFi network name</string>
-    <string name="notification_show_wifi_ssid_summary">Display the name of the currently connected Wifi network</string>
     <string name="ime_switcher_title">Show IME Switcher</string>
     <string name="ime_switcher_summary">In Statusbar while typing</string>
     <string name="wakeup_when_plugged_unplugged_title">Wake up on charger</string>
