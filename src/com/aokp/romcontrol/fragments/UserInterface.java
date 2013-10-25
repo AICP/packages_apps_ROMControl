@@ -110,7 +110,6 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     private static final CharSequence PREF_STATUSBAR_HIDDEN = "statusbar_hidden";
     private static final CharSequence PREF_DARK_UI = "ui_inverted_mode";
     private static final String KEY_STATUS_BAR_TRAFFIC = "status_bar_traffic";
-    private static final String PREF_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
     private static final String STATUS_BAR_AUTO_HIDE = "status_bar_auto_hide";
     private static final String STATUS_BAR_QUICK_PEEK = "status_bar_quick_peek";
     private static final CharSequence PREF_STATUSBAR_SWIPE_TIMEOUT = "statusbar_swipe_timeout";
@@ -142,7 +141,6 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     CheckBoxPreference mStatusbarSliderPreference;
     AlertDialog mCustomBootAnimationDialog;
     ListPreference mUserModeUI;
-    ListPreference mLowBatteryWarning;
     CheckBoxPreference mHideExtras;
     CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
     CheckBoxPreference mDualpane;
@@ -311,13 +309,6 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
         mStatusBarTraffic = (CheckBoxPreference) findPreference(KEY_STATUS_BAR_TRAFFIC);
         mStatusBarTraffic.setChecked(Settings.System.getBoolean(mContentResolver,
                 Settings.System.STATUS_BAR_TRAFFIC, false));
-
-        mLowBatteryWarning = (ListPreference) findPreference(PREF_LOW_BATTERY_WARNING_POLICY);
-        int lowBatteryWarning = Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.POWER_UI_LOW_BATTERY_WARNING_POLICY, 3);
-        mLowBatteryWarning.setValue(String.valueOf(lowBatteryWarning));
-        mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntry());
-        mLowBatteryWarning.setOnPreferenceChangeListener(this);
 
         // hide option if device is already set to never wake up
         if (!mContext.getResources().getBoolean(
@@ -1177,13 +1168,6 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                     Settings.System.LISTVIEW_INTERPOLATOR,
                     listviewinterpolator);
             mListViewInterpolator.setSummary(mListViewInterpolator.getEntries()[index]);
-            return true;
-        } else if (preference == mLowBatteryWarning) {
-            int lowBatteryWarning = Integer.valueOf((String) newValue);
-            int index = mLowBatteryWarning.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.POWER_UI_LOW_BATTERY_WARNING_POLICY, lowBatteryWarning);
-            mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntries()[index]);
             return true;
         } else if (preference == mStatusBarSwipeTimeout) {
             int statusbarswipetimeout = Integer.valueOf((String) newValue);
