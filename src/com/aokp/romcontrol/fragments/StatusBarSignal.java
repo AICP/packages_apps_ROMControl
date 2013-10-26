@@ -15,14 +15,20 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 public class StatusBarSignal extends AOKPPreferenceFragment implements
         OnPreferenceChangeListener {
 
+    private static final String STATUS_BAR_NETWORK_STATS = "status_bar_show_network_stats";
+    private static final String STATUS_BAR_NETWORK_STATS_UPDATE = "status_bar_network_status_update";
+
     ListPreference mDbmStyletyle;
     ListPreference mWifiStyle;
+    private ListPreference mNetStatsUpdate;
     ColorPickerPreference mColorPicker;
     ColorPickerPreference mWifiColorPicker;
+    private ColorPickerPreference mNetStatsColorPicker;
     CheckBoxPreference mHideSignal;
     CheckBoxPreference mAltSignal;
     CheckBoxPreference mShow4gForLte;
     CheckBoxPreference mHideAllSignal;
+    CheckBoxPreference mNetworkStats;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,8 +52,15 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
         mWifiStyle.setValue(Integer.toString(Settings.System.getInt(mContentRes,
                 Settings.System.STATUSBAR_WIFI_SIGNAL_TEXT, 0)));
 
+        mNetworkStats = (CheckBoxPreference) findPreference(STATUS_BAR_NETWORK_STATS);
+        mNetworkStats.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.STATUS_BAR_NETWORK_STATS, 0) == 1));
+
         mWifiColorPicker = (ColorPickerPreference) findPreference("wifi_signal_color");
         mWifiColorPicker.setOnPreferenceChangeListener(this);
+
+        mNetStatsColorPicker = (ColorPickerPreference) findPreference("status_bar_network_status_color");
+        mNetStatsColorPicker.setOnPreferenceChangeListener(this);
 
         mHideSignal = (CheckBoxPreference) findPreference("hide_signal");
         mHideSignal.setChecked(Settings.System.getBoolean(mContentRes,
@@ -66,6 +79,13 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
         mHideAllSignal = (CheckBoxPreference) findPreference("hide_all_signal");
         mHideAllSignal.setChecked(Settings.System.getBoolean(mContentRes,
                 Settings.System.STATUSBAR_HIDE_ALL_SIGNAL_BARS, false));
+
+       mNetStatsUpdate = (ListPreference) findPreference(STATUS_BAR_NETWORK_STATS_UPDATE);
+        long statsUpdate = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.STATUS_BAR_NETWORK_STATS_UPDATE_INTERVAL, 500);
+        mNetStatsUpdate.setValue(String.valueOf(statsUpdate));
+        mNetStatsUpdate.setSummary(mNetStatsUpdate.getEntry());
+        mNetStatsUpdate.setOnPreferenceChangeListener(this);
 
         if (Integer.parseInt(mDbmStyletyle.getValue()) == 0) {
             mColorPicker.setEnabled(false);
@@ -105,6 +125,11 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
         } else if  (preference == mHideAllSignal) {
             Settings.System.putBoolean(mContentRes,
                     Settings.System.STATUSBAR_HIDE_ALL_SIGNAL_BARS, mHideAllSignal.isChecked());
+            return true;
+        } else if (preference == mNetworkStats) {
+            boolean value = mNetworkStats.isChecked();
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.STATUS_BAR_NETWORK_STATS, value ? 1 : 0);
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -155,6 +180,22 @@ public class StatusBarSignal extends AOKPPreferenceFragment implements
             int intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(mContentRes,
                     Settings.System.STATUSBAR_WIFI_SIGNAL_TEXT_COLOR, intHex);
+            return true;
+        } else if (preference == mNetStatsUpdate) {
+            long updateInterval = Long.valueOf((String) newValue);
+            int index = mNetStatsUpdate.findIndexOfValue((String) newValue);
+            Settings.System.putLong(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.STATUS_BAR_NETWORK_STATS_UPDATE_INTERVAL, updateInterval);
+            mNetStatsUpdate.setSummary(mNetStatsUpdate.getEntries()[index]);
+            return true;
+        } else if (preference == mNetStatsColorPicker) {
+            String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
+                    .valueOf(newValue)));
+            preference.setSummary(hex);
+
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(mContentRes,
+                    Settings.System.STATUS_BAR_NETWORK_STATS_TEXT_COLOR, intHex);
             return true;
         }
         return false;
