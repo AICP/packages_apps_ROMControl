@@ -65,6 +65,12 @@
             android:entryValues="@array/values_status_bar_network_stats_update"
             android:dependency="status_bar_show_network_stats" />
 
+        <CheckBoxPreference
+            android:key="status_bar_traffic"
+            android:title="@string/show_network_speed"
+            android:summary="@string/show_network_speed_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

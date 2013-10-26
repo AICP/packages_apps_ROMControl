@@ -109,7 +109,6 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     private static final CharSequence PREF_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
     private static final CharSequence PREF_STATUSBAR_HIDDEN = "statusbar_hidden";
     private static final CharSequence PREF_DARK_UI = "ui_inverted_mode";
-    private static final String KEY_STATUS_BAR_TRAFFIC = "status_bar_traffic";
     private static final String STATUS_BAR_AUTO_HIDE = "status_bar_auto_hide";
     private static final String STATUS_BAR_QUICK_PEEK = "status_bar_quick_peek";
     private static final CharSequence PREF_STATUSBAR_SWIPE_TIMEOUT = "statusbar_swipe_timeout";
@@ -150,7 +149,6 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
     CheckBoxPreference mDarkUI;
     ListPreference mListViewAnimation;
     ListPreference mListViewInterpolator;
-    CheckBoxPreference mStatusBarTraffic;
     CheckBoxPreference mStatusBarAutoHide;
     CheckBoxPreference mStatusBarQuickPeek;
     ListPreference mStatusBarSwipeTimeout;
@@ -305,10 +303,6 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                 Settings.Secure.UI_INVERTED_MODE, 1) == 2;
         mDarkUI = (CheckBoxPreference) findPreference(PREF_DARK_UI);
         mDarkUI.setChecked(darkUIenabled);
-
-        mStatusBarTraffic = (CheckBoxPreference) findPreference(KEY_STATUS_BAR_TRAFFIC);
-        mStatusBarTraffic.setChecked(Settings.System.getBoolean(mContentResolver,
-                Settings.System.STATUS_BAR_TRAFFIC, false));
 
         // hide option if device is already set to never wake up
         if (!mContext.getResources().getBoolean(
@@ -655,11 +649,6 @@ public class UserInterface extends AOKPPreferenceFragment implements OnPreferenc
                     }
                 }
             }
-            return true;
-        } else if (preference == mStatusBarTraffic) {
-            Settings.System.putBoolean(mContentResolver,
-                    Settings.System.STATUS_BAR_TRAFFIC,
-                    ((TwoStatePreference) preference).isChecked());
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

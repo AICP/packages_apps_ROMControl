@@ -506,6 +506,8 @@
     <string name="status_bar_show_network_stats_title">Show network speeds</string>
     <string name="status_bar_network_stats_update_title">Update frequency</string>
     <string name="status_bar_network_stats_color_title">Network speeds text color</string>
+    <string name="show_network_speed">Network speed indicator</string>
+    <string name="show_network_speed_summary">Show alternative network speed (color can\'t be changed)</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
@@ -1284,10 +1286,6 @@
     <string name="listview_overshoot_interpolator">overshoot_interpolator</string>
     <string name="listview_anticipate_overshoot_interpolator">anticipate_overshoot_interpolator</string>
     <string name="listview_bounce_interpolator">bounce_interpolator</string>
-
-    <!-- Network speed -->
-    <string name="show_network_speed">Network speed indicator</string>
-    <string name="show_network_speed_summary">Show network speed in statsbar</string>
 
     <!-- Animation Controls -->
     <string name="title_animation_controls">Animations</string>
