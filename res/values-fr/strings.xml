@@ -162,20 +162,20 @@
     <string name="menu_ribbon_toggles_error">Paramètres rapides uniquement disponibles pour les barres latérales supportant le balayage à droite ou à gauche</string>
     <string name="menu_lockscreens_reset">"Réinitialiser le fond d'écran de l'écran de verrouillage"</string>
     <string name="enable_bootanimation_unlock">"Pour déverrouiller : décochez la case \"désactiver l'animation de démarrage\""</string>
-    <string name="enable_phone_or_phablet">Pour déverrouiller: activer \"Mode UI\" téléphone ou phablet</string>
-    <string name="enable_tablet_ui">Pour déverrouiller: activer \"Mode UI\" tablette</string>
-    <string name="enable_noti_wallpaper">Pour déverrouiller: activer \"Mode UI\" téléphone ou phablet et définir un arrière-plan de notification</string>
+    <string name="enable_phone_or_phablet">Pour déverrouiller : activer \"Mode UI\" téléphone ou phablet</string>
+    <string name="enable_tablet_ui">Pour déverrouiller : activer \"Mode UI\" tablette</string>
+    <string name="enable_noti_wallpaper">Pour déverrouiller : activer \"Mode UI\" téléphone ou phablet et définir un arrière-plan de notification</string>
     <string name="enable_crt_mode">"Pour déverrouiller : désactivez l'animation de l'écran de verrouillage "</string>
     <string name="enable_menu_location">Pour déverrouiller : activez une localisation du Menu</string>
     <string name="enable_hiding_navbar">Pour déverrouiller : activez le masquage de la barre de navigation</string>
     <string name="enable_hiding_systembar">Pour déverrouiller : activez le masque de la Barre Système</string>
     <string name="enable_audio_mode">Pour déverrouiller : activez le mode audio \"face vers le bas\"</string>
     <string name="enable_battery_bar">Pour déverrouiller : activez une localisation de la barre de batterie</string>
-    <string name="enable_clock_location">"Pour déverrouiller: activer un \"style d'horloge\""</string>
+    <string name="enable_clock_location">"Pour déverrouiller : activer un \"style d'horloge\""</string>
     <string name="enable_signal_text">"Pour déverrouiller : réglez le style de l'indicateur de signal sur \"Texte\" ou \"dBm\""</string>
     <string name="enable_wifi_text">"Pour déverrouiller : réglez le style de l'indicateur de signal Wi-Fi sur \"Texte\""</string>
     <string name="enable_toggle_tiles">Pour déverrouiller : réglez le style des Paramètres Rapides sur \"Tuiles\"</string>
-    <string name="enable_fasttoggle">To Unlock: \"enable fast toggle\" and tiles \"toggle style\"</string>
+    <string name="enable_fasttoggle">Pour déverrouiller : \"enable fast toggle\" and tiles \"toggle style\"</string>
     <string name="enable_favorite_toggle">Pour déverrouiller : activez un réglage \"Contact favori\" ici ou dans une barre latérale</string>
     <string name="enable_screenshot_toggle">"Pour déverrouiller : activez un réglage \"Capture d'écran\" ici ou dans une barre latérale"</string>
     <string name="enable_custom_toggle">Pour déverrouiller : activez un réglage \"Personnalisé\" ici ou dans une barre latérale</string>
@@ -217,7 +217,7 @@
     <string name="persist_file_xposed_notinstalled">"Xposed Installer n'est pas installé"</string>
     <string name="title_pref_powersaving_pref_mode">"Activer l'économiseur d'énergie"</string>
     <string name="summary_pref_powersaving_pref_mode">@null</string>
-    <string name="title_pref_powersaving_data_screen_off">"Action de la data lorsque l'écran est éteint "</string>
+    <string name="title_pref_powersaving_data_screen_off">"Action des données lorsque l'écran est éteint "</string>
     <string name="summary_pref_powersaving_data_screen_off">"Que faire avec les données lorsque l'écran s'éteint"</string>
     <string name="title_pref_powersaving_data_screen_off_delay">"Délai d'action de données"</string>
     <string name="summary_pref_powersaving_data_screen_off_delay">"Délai avant application des actions de données ? "</string>
@@ -339,7 +339,7 @@
     <string name="notification_show_wifi_ssid_title">Afficher le nom du réseau WiFi</string>
     <string name="notification_show_wifi_ssid_summary">Afficher le nom du réseau Wifi actuellement connecté</string>
     <string name="brightness_slider_title">"Luminosité par glissement sur la barre d'état"</string>
-    <string name="brightness_slider_summary">"Cette option vous permet de changer la luminosité en glissant\nvotre doigt sur la barre d'état. Note: Elle ne pourra pas être activée si la luminosité auto est activée"</string>
+    <string name="brightness_slider_summary">"Cette option vous permet de changer la luminosité en glissant\nvotre doigt sur la barre d'état. Note : Elle ne pourra pas être activée si la luminosité auto est activée"</string>
     <string name="user_mode_ui">UI Mode</string>
     <string name="user_mode_ui_summary">"Choisissez le style de la barre de navigation et de la barre d'état"</string>
     <string name="phone_mode_ui">Téléphone  - Barre de navigation à droite en mode paysage</string>
@@ -357,9 +357,9 @@
     <string name="dark_ui">Dark AOKP</string>
     <string name="lcd_density_title">"Densité de l'écran LCD"</string>
     <string name="lcd_density_summary">inconnu</string>
-    <string name="current_lcd_density">"Densité actuelle: "</string>
+    <string name="current_lcd_density">"Densité actuelle : "</string>
     <string name="lcd_density_wizard">Assistant Densité LCD</string>
-    <string name="follow_through_title">ATTENTION:</string>
+    <string name="follow_through_title">ATTENTION :</string>
     <string name="follow_through_summary">"Il est recommandé d'utiliser un PlayStore supportant des densités d'écran multiples !"</string>
     <string name="stock_density_title">Modifiez la densité LCD à une valeur par défaut</string>
     <string name="stock_density_summary">Les tablettes et les téléphones anciens utilisent 160.\nLa plupart des téléphones récents utilisent 240.\nLe Galaxy Nexus utilise 320 par défaut.</string>
@@ -613,8 +613,8 @@
     <string name="hide_navbar_timeout_30000">30 Sec</string>
     <string name="navbar_buttons_instructions">"Appuyez sur l'icône pour sélectionner les actions ou les icônes personnalisées"</string>
     <string name="navbar_title_menu">Options du bouton</string>
-    <string name="navbar_actiontitle_menu">Action: %1$s</string>
-    <string name="navbar_longpress_menu">Appui long: %1$s</string>
+    <string name="navbar_actiontitle_menu">Action : %1$s</string>
+    <string name="navbar_longpress_menu">Appui long : %1$s</string>
     <string name="navbar_icon_menu">Icône personnalisé</string>
     <string name="navbar_delete_menu">Supprimer bouton</string>
     <string name="navbar_ring_cat">"Éléments de l'anneau de navigation"</string>
@@ -712,19 +712,19 @@
     <string name="led_custom_message">"Voulez-vous changer l'application : "</string>
     <string name="led_edit_button">-</string>
     <string name="led_test_notification">Tester la LED</string>
-    <string name="led_test_notification_message_now">"Test de la LED en cours pour: "</string>
+    <string name="led_test_notification_message_now">"Test de la LED en cours pour : "</string>
     <string name="led_test_notification_message_note">".
 Désactivez votre écran pour tester la LED. Ne pas cliquez sur OK
 avant d'avoir visualisé la couleur de la LED.</string>
     <string name="led_test_ok">OK</string>
     <string name="title_charging_led_on">Activer LED pendant le chargement (nécessite un redémarrage)</string>
     <string name="led_change_brightness">Changer la luminosité</string>
-    <string name="led_brightness_default">Luminosité par défaut: 31</string>
+    <string name="led_brightness_default">Luminosité par défaut : 31</string>
     <string name="title_bln"><b>B</b>outton<b> L</b>umière <b>N</b>otification</string>
     <string name="increasing_ring_title">Sonnerie croissante</string>
     <string name="checkbox_increasing_ring">Activer</string>
     <string name="increasing_ring_min_volume_title">Volume sonnerie de départ</string>
-    <string name="increasing_ring_volume_notice">"Note: 
+    <string name="increasing_ring_volume_notice">"Note : 
 Le volume de départ étant réglé sur une valeur supérieure au volume de la sonnerie, le volume de la sonnerie sera utilisé."</string>
     <string name="increasing_ring_interval_title">"Intervalle de l'augmentation croissante du volume"</string>
     <string name="increasing_ring_interval_eachring">Sur chaque répétition de sonnerie</string>
@@ -752,7 +752,7 @@ Le volume de départ étant réglé sur une valeur supérieure au volume de la s
     <string name="summary_down_sec">"Délai avant d'activation du mode Face vers le bas"</string>
     <string name="flip_action_positive">OK</string>
     <string name="flip_dialog_title">Comment ça fonctionne</string>
-    <string name="flip_dialog_msg">"Lorsque vous retournez votre téléphone celui-ci se mettra en mode Vibreur ou en mode Silencieux,fonction de votre choix. Comptez 1.5 secondes (par défaut) pour changer de mode une fois retourné. Si vous rallumez l'écran, votre appareil reviendra en mode normal après 15 secondes (par défaut). ATTENTION: ** Une fois l'appareil retourné, vous devrez rallumer l'écran pour réactiver le son (une fois que le délai d'extinction de l'écran a expiré).**"</string>
+    <string name="flip_dialog_msg">"Lorsque vous retournez votre téléphone celui-ci se mettra en mode Vibreur ou en mode Silencieux,fonction de votre choix. Comptez 1.5 secondes (par défaut) pour changer de mode une fois retourné. Si vous rallumez l'écran, votre appareil reviendra en mode normal après 15 secondes (par défaut). ATTENTION : ** Une fois l'appareil retourné, vous devrez rallumer l'écran pour réactiver le son (une fois que le délai d'extinction de l'écran a expiré).**"</string>
     <string name="summary_phone_flip_mode">"Retournement votre téléphone face vers le bas va mettre votre téléphone en mode silencieux lors de la réception d'un appel."</string>
     <string name="title_phone_flip_mode">"Silence lors d'un appel"</string>
     <string name="vibrations_category">Vibrations</string>
@@ -859,7 +859,7 @@ Le volume de départ étant réglé sur une valeur supérieure au volume de la s
     <string name="weather_custom_location_dialog_title">Définir votre position</string>
     <string name="weather_custom_location_dialog_message">"Assurez-vous de suivre les exemples! La définition d'un emplacement non valide peut vous empêcher d'obtenir les mises à jour météorologiques et peuvent provoquer un comportement inattendu.
 
-Exemples: New York,NY // New York, NY // 10033 // Londres, Angleterre"</string>
+Exemples : New York,NY // New York, NY // 10033 // Londres, Angleterre"</string>
     <string name="weather_custom_location_title">Emplacement personnalisé</string>
     <string name="weather_show_location_title">Afficher localisation</string>
     <string name="weather_show_location_summary">Afficher votre emplacement.</string>
@@ -953,8 +953,8 @@ Exemples: New York,NY // New York, NY // 10033 // Londres, Angleterre"</string>
     <string name="vib_save">Enregistrer</string>
     <string name="vib_del">Supprimer</string>
     <string name="vib_dialog_text_entry">Enregistrer vibration</string>
-    <string name="vib_dialog_name">Nom:</string>
-    <string name="vib_cur_loaded_title">Chargé:</string>
+    <string name="vib_dialog_name">Nom :</string>
+    <string name="vib_cur_loaded_title">Chargé :</string>
     <string name="help">Aide</string>
     <string name="vibration_detailed_help">"Les 5 étapes pour créer votre modèle personnalisé de vibration :
         - Cliquez sur \"Nouveau/réinitialiser\"
@@ -1226,10 +1226,10 @@ Veuillez vérifier les accès root. Pour activer aller dans les paramètres de s
     <string name="hardware_keys_menu_key_title">Bouton menu</string>
     <string name="hardware_keys_assist_key_title">Bouton rechercher</string>
     <string name="hardware_keys_appswitch_key_title">Bouton récents</string>
-    <string name="hardware_keys_camera_key_title">"Bouton de l'appareil photo"</string>
+    <string name="hardware_keys_camera_key_title">"Bouton de l\'appareil photo"</string>
     <string name="hardware_keys_volume_keys_title">Boutons de volume</string>
     <string name="hardware_keys_short_press_title">"Action à l'appui court"</string>
-    <string name="hardware_keys_long_press_title">"Action à l'appui long"</string>
+    <string name="hardware_keys_long_press_title">"Action à l\'appui long"</string>
     <string name="hardware_keys_double_tap_title">Action au double tapotement</string>
     <string name="hardware_keys_show_overflow_title">Afficher les actions persistantes</string>
     <string name="hardware_keys_show_overflow_summary">Affiche le bouton persistant de Menu sous la forme de 3 points</string>
@@ -1243,20 +1243,21 @@ Veuillez vérifier les accès root. Pour activer aller dans les paramètres de s
     <string name="hardware_keys_action_in_app_search">"Recherche dans l'application"</string>
     <string name="hardware_keys_action_launch_camera">Lancer Appareil photo</string>
     <string name="hardware_keys_action_last_app">Basculer à la dernière app</string>
-    <string name="hardware_keys_action_power">"Bouton d'alimentation"</string>
+    <string name="hardware_keys_action_power">"Bouton d\'alimentation"</string>
     <string name="hardware_keys_action_torch">Lampe Torche</string>
-    <string name="camera_wake_title">Camera button wake</string>
-    <string name="camera_wake_summary">Pressing the camera button will wake your device</string>
+    <string name="camera_wake_title">Bouton appareil photo réveil</string>
+    <string name="camera_wake_summary">En appuyant sur le bouton de l\'appareil photo votre périphérique se réveillera</string>
     <string name="camera_sleep_on_release_title">Screen peek</string>
     <string name="camera_sleep_on_release_summary">A half press will keep the screen on only while t he button is held down</string>
-    <string name="camera_music_controls_title">Playback control</string>
-    <string name="camera_music_controls_summary">When the screen is off, long pressing the camera ke y will play/pause current music track</string>
-    <string name="auto_hide_statusbar">"Masquer automatiquement la barre d'état"</string>
-    <string name="auto_hide_statusbar_summary">"La barre d'état est masquée s'il n'y a pas de notifications"</string>
+    <string name="camera_music_controls_title">Contrôle de la lecture</string>
+    <string name="camera_music_controls_summary">"Lorsque l\'écran est éteint, appuyez longuement sur la touche de l'appareil photo jouera le morceau de musique actuelle"</string>
+    <string name="auto_hide_statusbar">"Masquer automatiquement la barre d\'état"</string>
+    <string name="auto_hide_statusbar_summary">"La barre d\'état est masquée s\'il n'y a pas de notifications"</string>
     <string name="statusbar_quick_peek_title">Aperçu rapide</string>
     <string name="statusbar_quick_peek_summary">"Aperçu de la barre de statut par glissement à partir du haut de l'écran"</string>
-    <string name="statusbar_swipe_timeout_title">"Délai d'expiration de la barre de statut"</string>
+    <string name="statusbar_swipe_timeout_title">"Délai d\'expiration de la barre de statut"</string>
     <string name="statusbar_swipe_timeout_summary">Délai pour montrer la barre de statut</string>
-    <string name="fast_charge_not_supported_title">Fast Charge not supported</string>
-    <string name="fast_charge_not_supported">Fast Charge is not supported by the current kernel.</string>
+    <string name="fast_charge_not_supported_title">Recharge rapide non prise en charge</string>
+    <string name="fast_charge_not_supported">"La recharge rapide n\'est pas supporté par le noyau actuel."</string>
+    <string name="toggle_default_entries">UTILISATEUR|LUMINOSITÉ|RÉGLAGES|WIFI|ROTATION|BATTERIE|MODE_AVION|BLUETOOTH</string>
 </resources>
