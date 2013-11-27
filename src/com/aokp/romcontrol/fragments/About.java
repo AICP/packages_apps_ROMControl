@@ -50,7 +50,7 @@ public class About extends AOKPPreferenceFragment {
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
                                          Preference preference) {
         if (preference == mSiteUrl) {
-            launchUrl("http://http://tunsd.de/downloads/ICJ/AICP//");
+            launchUrl("http://tunsd.de/downloads/ICJ/AICP/");
         } else if (preference == mReviewUrl) {
             Intent mGerrit = new Intent(getActivity().getApplicationContext(),
                     com.jbirdvegas.mgerrit.GerritControllerActivity.class);
