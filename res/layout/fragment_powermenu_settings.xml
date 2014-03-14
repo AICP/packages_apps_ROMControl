@@ -60,7 +60,7 @@
                 android:defaultValue="1"
                 />
 
-          <com.aokp.romcontrol.settings.SingleChoiceSetting
+<!--          <com.aokp.romcontrol.settings.SingleChoiceSetting
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/setting_immersive_mode_options"
@@ -70,7 +70,7 @@
                 android:entries="@array/power_menuEntries"
                 android:entryValues="@array/power_menuValues"
                 android:defaultValue="0"
-                />
+                /> -->
 
            <com.aokp.romcontrol.settings.SingleChoiceSetting
                 android:layout_width="match_parent"
