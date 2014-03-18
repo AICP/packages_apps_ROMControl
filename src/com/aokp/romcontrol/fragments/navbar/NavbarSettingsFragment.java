@@ -58,9 +58,11 @@ public class NavbarSettingsFragment extends Fragment implements OnSettingChanged
                 navbar_height_landscape.setVisibility(View.GONE);
             }
         } else {
-            navbar_width.setVisibility(View.GONE);
-            navbar_height.setVisibility(View.GONE);
-            navbar_height_landscape.setVisibility(View.GONE);
+            if (!hasHWbuttons() && !hasNavbar) {
+                navbar_width.setVisibility(View.GONE);
+                navbar_height.setVisibility(View.GONE);
+            }
+                navbar_height_landscape.setVisibility(View.GONE);
         }
 
         return v;
