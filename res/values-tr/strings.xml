@@ -44,7 +44,6 @@
 
     <!-- About -->
     <string name="devs">Takım</string>
-    <string name="aokp" translatable="false">Android Open Kang Project</string>
     <string name="aokp_website_title">AOKP Web Sitesi</string>
     <string name="aokp_website_summary">www.aokp.co - Yeni sürümler her zaman burada</string>
     <string name="aokp_review_title">AOKP Code Review - Gerrit</string>
@@ -53,43 +52,6 @@
     <string name="aokp_irc_summary">#teamkang @ irc.freenode.net</string>
     <string name="about_aokp">AOKP Hakkında</string>
     <string name="about_aokp_summary">@null</string>
-    <string name="donate_aokp" translatable="false">https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=DBBCGTVJ984YG
-    </string>
-    <string name="github_aokp" translatable="false">https://github.com/AOKP</string>
-    <string name="github_adam" translatable="false">https://github.com/syaoran12</string>
-    <string name="github_akellar" translatable="false">https://github.com/akellar</string>
-    <string name="github_bajee11" translatable="false">https://github.com/Bajee11</string>
-    <string name="github_bmc08gt" translatable="false">https://github.com/BMc08GT</string>
-    <string name="github_birdman" translatable="false">https://github.com/mrbirdman</string>
-    <string name="github_bytecodeme" translatable="false">https://github.com/BytecodeMe</string>
-    <string name="github_championswimmer" translatable="false">https://github.com/championswimmer</string>
-    <string name="github_DAGr8" translatable="false">https://github.com/DAGr8</string>
-    <string name="github_dhacker29" translatable="false">https://github.com/dhacker29</string>
-    <string name="github_graffixnyc" translatable="false">https://github.com/graffixnyc</string>
-    <string name="github_hashcode" translatable="false">https://github.com/Hashcode</string>
-    <string name="github_willdeberry" translatable="false">https://github.com/willdeberry</string>
-    <string name="github_jbirdvegas" translatable="false">https://github.com/JBirdVegas</string>
-    <string name="github_k900" translatable="false">https://github.com/K900</string>
-    <string name="github_kecinzer" translatable="false">https://github.com/kecinzer</string>
-    <string name="github_khasmek" translatable="false">https://github.com/KhasMek</string>
-    <string name="github_kwes" translatable="false">https://github.com/kwes1020</string>
-    <string name="github_marclandis" translatable="false">https://github.com/MarcLandis</string>
-    <string name="github_rohan32" translatable="false">https://github.com/rohanmathur</string>
-    <string name="github_roman" translatable="false">https://github.com/romanbb</string>
-    <string name="github_protekk" translatable="false">https://github.com/ProTekk</string>
-    <string name="github_qnhoang81" translatable="false">https://github.com/qnhoang81</string>
-    <string name="github_scar45" translatable="false">https://github.com/scar45</string>
-    <string name="github_sethyx" translatable="false">https://github.com/sethyx</string>
-    <string name="github_sixstringsg" translatable="false">https://github.com/sixstringsg</string>
-    <string name="github_stevespear" translatable="false">https://github.com/Stevespear426</string>
-    <string name="github_tdm" translatable="false">https://github.com/tdm</string>
-    <string name="github_whitehawk" translatable="false">https://github.com/Whitehawkx</string>
-    <string name="github_xoom" translatable="false">https://github.com/xoomdev</string>
-    <string name="github_zaph" translatable="false">https://github.com/Zaphod-Beeblebrox</string>
-    <string name="url_aokp" translatable="false">http://aokp.co/</string>
-    <string name="url_aokp_gerrit" translatable="false">http://gerrit.aokp.co</string>
-    <string name="url_aokp_irc" translatable="false">http://webchat.freenode.net/?channels=teamkang</string>
-    <string name="android_open_kang_project" translatable="false">Android Open Kang Project</string>
     <string name="kanglings">The Kanglings</string>
 
     <!-- dynamic changelog -->
@@ -102,7 +64,6 @@
     <string name="arrow_right">→</string>
     <string name="arrow_down">↓</string>
     <string name="hex">Hex:</string>
-    <string name="hex_hint" translatable="false">#FF000000</string>
     <string name="set">Ayarla</string>
     <string name="default_color">Varsayılan</string>
 
