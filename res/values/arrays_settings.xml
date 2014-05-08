@@ -140,6 +140,7 @@
         <item>@string/size_36_dp</item>
         <item>@string/size_30_dp</item>
         <item>@string/size_24_dp</item>
+        <item>@string/size_1_dp</item>
     </string-array>
     <string-array name="navigation_bar_width_values" translatable="false">
         <item>42</item>
@@ -147,6 +148,7 @@
         <item>36</item>
         <item>30</item>
         <item>24</item>
+        <item>1</item>
     </string-array>
     <string-array name="navigation_bar_height_entries" translatable="false">
         <item>@string/size_48_dp_default</item>
