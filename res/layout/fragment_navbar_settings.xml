@@ -66,5 +66,16 @@
                 android:defaultValue="false"
                 />
 
+        <com.aokp.romcontrol.settings.CheckboxSetting
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/navigation_bar_left"
+                android:key="navigation_bar_left"
+                android:title="@string/navigation_bar_left_title"
+                android:summary="@string/navigation_bar_left_summary"
+                android:dependency="enable_navigation_bar"
+                android:defaultValue="false" />
+
+
     </LinearLayout>
 </ScrollView>
