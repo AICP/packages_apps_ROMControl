@@ -144,15 +144,6 @@
   <string name="category_signalbars">Barre del segnale di rete</string>
   <string name="statusbar_signal_text_title">Mostra indicatore testuale del segnale</string>
   <string name="statusbar_signal_text_summary">Mostra il segnale con l\'indicatore dei dBm (decibel metro)</string>
-  <string name="statusbar_hide_signal_bars_title">Nascondi barre del segnale di rete</string>
-  <string name="statusbar_hide_signal_bars_summary">Possibilità di nascondere le barre del segnale di rete</string>
-  <string name="status_bar_network_title">Traffico di rete</string>
-  <string name="status_bar_show_network_stats_title">Mostra le velocità di rete</string>
-  <string name="status_bar_show_network_stats_summary">Mostra le velocità di rete nella barra di stato</string>
-  <string name="status_bar_network_stats_update_title">Frequenza di aggiornamento</string>
-  <string name="status_bar_network_stats_update_summary">Scegli quanto spesso deve essere aggiornato l\'indicatore</string>
-  <string name="status_bar_network_stats_color_title">Colore del testo della velocità di rete</string>
-  <string name="status_bar_network_stats_color_summary">Scegli il colore dell\'indicatore della velocità di rete nella barra di stato</string>
   <string name="persist_options">Persistenza</string>
   <string name="persist_enable">Abilita persistenza</string>
   <string name="persist_enable_summary">Abilita la persistenza dei dati da sovra-installazioni</string>
